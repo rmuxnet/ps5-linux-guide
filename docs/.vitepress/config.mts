@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'ps5-linux GitHub', link: 'https://github.com/ps5-linux' },
           { text: 'ps5-linux-image', link: 'https://github.com/ps5-linux/ps5-linux-image' },
           { text: 'ps5-linux-image (mia)', link: 'https://git.etawen.dev/mia/ps5-linux-image' },
+          { text: 'Contributor', link: "https://github.com/nothinglikeuuuuu"}
         ],
       },
     ],
@@ -53,7 +54,14 @@ export default defineConfig({
           { text: 'Prerequisites', link: '/guide/prerequisites' },
           { text: 'Jailbreak', link: '/guide/jailbreak' },
           { text: 'Booting Linux', link: '/guide/booting' },
-          { text: 'Kernel Setup', link: '/guide/kernel' },
+          {
+            text: 'Kernel Setup',
+            collapsed: false,
+            items: [
+              { text: 'General Setup', link: '/guide/kernel' },
+              { text: 'Arch Linux Compilation', link: '/guide/arch' }
+            ]
+          },
         ],
       },
       {
@@ -63,6 +71,14 @@ export default defineConfig({
           { text: 'Audio', link: '/guide/audio' },
           { text: 'DualSense Controller', link: '/guide/dualsense' },
           { text: 'Known Issues', link: '/guide/known-issues' },
+        ],
+      },
+      {
+        text: 'Emulators',
+        items: [
+          { text: 'PS1 Emulator', link: 'guide/duckstation'},
+          { text: 'PS2 Emulator', link: 'guide/pcsx2'},
+          { text: 'PS3 Emulator', link: '/guide/rpcs3' },
         ],
       },
       {

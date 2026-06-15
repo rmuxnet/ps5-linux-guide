@@ -1,20 +1,17 @@
 # Kernel Setup
 
-The ps5-linux project ships a patched kernel via [ps5-linux-patches](https://github.com/ps5-linux/ps5-linux-patches). Pre-built packages are available as `.deb` or `.pkg.tar.zst`.
+The ps5-linux project ships a patched kernel via [ps5-linux-patches](https://github.com/ps5-linux/ps5-linux-patches). Pre-built packages are available as `.deb` for Debian/Ubuntu.
 
-## Install Pre-built Kernel
+## 1. Install Pre-built Kernel
 
 Download from [ps5-linux-patches releases](https://github.com/ps5-linux/ps5-linux-patches/releases) and install normally:
 
 ```bash
 # Debian/Ubuntu
 sudo dpkg -i ps5-linux-*.deb
-
-# Arch
-sudo pacman -U ps5-linux-*.pkg.tar.zst
 ```
 
-## Build from Source
+## 2. Build from Source
 
 ```bash
 git clone https://github.com/ps5-linux/ps5-linux-patches
