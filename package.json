@@ -1,0 +1,16 @@
+{
+  "name": "ps5-linux-guide",
+  "version": "1.0.0",
+  "description": "Linux on PlayStation 5 - Community Guide",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}
