@@ -41,6 +41,14 @@ PS5 units ship with either 36 or 38 active CUs out of 40 total - the remainder a
 | 3 | Unlock all harvested CUs |
 | 4 | Probe-all |
 
+Without the unlock parameter, dmesg reports the hardware-default active CU count:
+
+```
+amdgpu: SE 2, SH per SE 2, CU per SH 10, active_cu_number 36
+```
+
+(2 × 2 × 10 = 40 total physical CUs, 36 active by default on this unit)
+
 To unlock all CUs, add to `cmdline.txt` on the FAT32 USB partition:
 
 ```
@@ -57,8 +65,38 @@ amdgpu for `1002:13fb` does not register the `vcn_v3_0` IP block. Mesa, VAAPI, a
 
 **Known fix (not yet upstream):** patch `drivers/gpu/drm/amd/amdgpu/nv.c` to add `vcn_v3_0` for `0x13fb` and rebuild the kernel. Tracked in [ps5-linux-patches TODO](https://github.com/ps5-linux/ps5-linux-patches#todo).
 
-## Tips
+## VRAM
 
-- If you see graphical issues in games, set `RADV_DEBUG=nohiz` (same recommendation as AMD BC250).
-- VRAM size defaults to 512 MB (dynamic VRAM allocation). Adjust in `vram.txt` on the FAT32 USB partition.
-- Many tips from [AMD BC250 Documentation](https://elektricm.github.io/amd-bc250-docs/) apply to PS5 too.
+Default allocation shown in tools is 512MB, but this is **dynamic** - the driver escalates and allocates more as needed. With 16GB shared RAM/VRAM, the GPU can use up to ~12GB in practice.
+
+To set a fixed allocation, edit `vram.txt` on the FAT32 USB partition:
+
+```
+8192
+```
+
+(value in MB)
+
+## Equivalent Hardware
+
+| Component | Equivalent |
+|---|---|
+| GPU | AMD RX 6700 (non-XT) - 36 CU, similar clocks |
+| CPU | ~AMD Ryzen 2700 (downclocked Zen 2, 8c/16t) |
+
+## Benchmarks (Superposition 1080p Extreme)
+
+| Config | Score | Notes |
+|---|---|---|
+| No boost | 4903 | GPU @ 3193 MHz |
+| Fan + boost, no CU unlock | ~5150 | |
+| 40 CU + fan + boost | 5041 | GPU @ 3493 MHz actual, kernel 7.0.10 |
+| 40 CU + fan + boost (CFI-1216A) | 5259 | 6nm APU, highest seen |
+
+BC250 reference: 36CU@2200MHz = ~5336, 40CU@2200MHz = ~5530. Boost mode on PS5 may not always sustain full clock speed depending on thermals.
+
+## Performance Tips
+
+- Remove `idle=halt` from `cmdline.txt` if you notice microstuttering - theflow asked community to test this
+- If you see graphical issues in games, set `RADV_DEBUG=nohiz` (same recommendation as AMD BC250)
+- Many tips from [AMD BC250 Documentation](https://elektricm.github.io/amd-bc250-docs/) apply to PS5 too

@@ -31,9 +31,6 @@ Community recommendations:
 | M.2 + PS5 games + Linux | **4.03** - community favorite, full jailbreak support, backports, up to 4TB M.2 |
 | Already on 5.xx/6.02 | Fine to stay, no downsides for Linux |
 
-::: warning Full custom firmware may only support 3.00
-A full custom firmware (CFW) for PS5 may come in the future and could be limited to 3.00. If you care about that possibility, keep it in mind before updating.
-:::
 
 ::: info 6.02 jailbreak is more tedious
 6.02 uses Y2JB which must be re-run every time. 3.xx-5.50 uses umtx2 which is simpler.

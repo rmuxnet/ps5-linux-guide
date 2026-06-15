@@ -22,11 +22,17 @@
 
 ## Networking
 
-- Ethernet: MediaTek Star GbE (`104d:9104`), driver `mts` - works out of the box, see [Ethernet](/guide/ethernet)
-- WiFi: IW620 (mwifiex) - see [WiFi](/guide/wifi)
+- Ethernet: MediaTek Star GbE / Salina GBE (`104d:9104`), driver `mts` - works out of the box, see [Ethernet](/guide/ethernet)
+- WiFi: Marvell IW620 (`1b4b:2b56`), driver `moal` - see [WiFi](/guide/wifi)
+
+## Audio
+
+- HDMI audio: AMD/ATI `1002:13ea` - working
+- HD Audio Coprocessor: AMD Ariel `1022:13eb` - unknown status
 
 ## USB
 
-- Front bottom: Type-C (USB 3.x) - recommended boot port
-- Front top: Type-A (USB 2.0) - slower, not recommended for boot
-- Rear: Type-A (USB 3.x) - usable for boot and peripherals
+- Type-A (2 port, USB 3.1 Gen2): AMD Ariel `1022:13ee`
+- Type-C (1 port, USB 3.1 Gen2 + DP Alt Mode): AMD Ariel `1022:13ed`
+- Front bottom Type-C - recommended boot port
+- Rear Type-A - usable for boot and peripherals

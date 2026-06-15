@@ -7,7 +7,7 @@
 | Distro | Desktop | Notes |
 |---|---|---|
 | Ubuntu 26.04 (default) | GNOME | Reccomended for beginners |
-| Arch | Sway | Minimal, rolling |
+| Arch | Sway | Low overhead, low RAM usage (~750 MiB idle) |
 | CachyOS | Gamescope + Steam Big Picture | Gaming-focused |
 | Kali Linux | XFCE + kali-linux-everything | ~96 GB image, needs ~150 GB free to build |
 | Fedora | GNOME | |
@@ -54,7 +54,11 @@ memory=8GB
 Then restart WSL: `wsl --shutdown`
 :::
 
-### Editing cmdline.txt from Windows (WSL)
+### Editing cmdline.txt from Windows
+
+**Without WSL:** Use [Explorer++](https://explorerplusplus.com/) (run as admin) - it can access the FAT32 EFI partition directly where `cmdline.txt` lives.
+
+**With WSL:**
 
 To mount the FAT32 partition of the PS5 USB in WSL and edit `cmdline.txt`:
 
@@ -78,7 +82,7 @@ Drive must be 64 GB+. External SSD is strongly reccomended.
 sudo dd if=ps5-ubuntu2604.img of=/dev/sdX bs=4M status=progress conv=fsync
 ```
 
-**Windows:** Use [Balena Etcher](https://etcher.balena.io/).
+**Windows:** Use [Rufus](https://rufus.ie/). Balena Etcher has known issues flashing PS5 images - use Rufus instead.
 
 ## 3. Plug USB into PS5
 
@@ -130,6 +134,10 @@ socat -t 99999999 - TCP:$PS5IP:9021 < ps5-linux-loader.elf
 
 ## First Boot
 
+::: warning Ubuntu - black screen before user creation
+Ubuntu has no default user. If you get a black screen before completing setup, you cannot SSH in to debug because there is no user to log in as. If this happens, chroot into the install from another Linux environment to create a user first - see [Recovering via Chroot](/guide/booting#recovering-via-chroot).
+:::
+
 1. Set up your user account and password. Make sure you remeber it.
 2. Disable the screen saver (currently broken).
 3. Hold kernel packages to prevent accidental upgrades:
@@ -162,9 +170,43 @@ socat -t 99999999 - TCP:$PS5IP:9021 < ps5-linux-loader.elf
    sudo ./install.sh
    ```
 
-## Recovering a Broken USB (Chroot Reinstall)
+## Recovering via Chroot
 
-If you broke your external SSD and can't boot, you can reinstall the kernel `.deb` via chroot from another Linux machine or from another booted PS5 Linux instance.
+If you can't boot but have access to another Linux environment (USB boot, another machine via SSH, etc.), you can chroot into your install to fix things.
+
+**Find your partition:**
+```bash
+lsblk -f
+# Look for the ext4 partition - nvme0n1p3 for M.2, sdXN for USB drive
+```
+
+```bash
+# M.2 install
+sudo mkdir -p /mnt/ps5root
+sudo mount /dev/nvme0n1p3 /mnt/ps5root
+
+sudo mount --bind /dev  /mnt/ps5root/dev
+sudo mount --bind /proc /mnt/ps5root/proc
+sudo mount --bind /sys  /mnt/ps5root/sys
+sudo mount --bind /run  /mnt/ps5root/run
+
+sudo chroot /mnt/ps5root
+
+# do your fixes here, then:
+exit
+
+sudo umount /mnt/ps5root/{run,dev,proc,sys}
+sudo umount /mnt/ps5root
+```
+
+**Common fixes inside chroot:**
+- Reinstall kernel: `dpkg -i /tmp/linux-ps5_*.deb`
+- Create user: `adduser <username>` then `usermod -aG sudo <username>`
+- Fix permissions: `chown -R user:user /home/user`
+
+### Kernel Reinstall (USB drive)
+
+If you broke your external USB drive and can't boot, reinstall the kernel `.deb` via chroot.
 
 ```bash
 sudo mkdir -p /mnt/usb

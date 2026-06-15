@@ -54,6 +54,26 @@ If Linux boots but goes black/blue after the login screen on a 4K display:
    ```
 3. If desktop still doesn't render, SSH in and switch desktop environment - GNOME is confirmed working for some users where other DEs fail
 
+## Black Screen but SSH Works
+
+If you can SSH in but display is black, collect logs to diagnose:
+
+```bash
+# Full boot log
+dmesg > logs.txt
+
+# Check firmware loading (look for errors)
+dmesg | grep -iE 'psp|ucode|firmware'
+
+# Check amdgpu firmware files exist
+ls /lib/firmware/amdgpu/
+
+# Full journal
+journalctl -b
+```
+
+Send `logs.txt` somewhere (USB, `scp`, HTTP server) and check for firmware or amdgpu errors.
+
 ## Wayland / X11
 
 Both work. Wayland (sway, weston) recommended.

@@ -15,6 +15,10 @@ Read [Supported Firmware](/guide/firmware) first. PS5 Phat only, max firmware 6.
 - M.2 SSD (FW 4.00+ only) for a dedicated Linux partition
 - USB WLAN adapter for internet (before internal WiFi driver is set up)
 
+## PS5 Linux noobs average day
+
+<video src="https://media.tenor.com/u4iPc3J_99UAAAPo/yapping-yapping-level-today.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
+
 ## Overview
 
 1. [Configure PS5 settings](/guide/prerequisites)

@@ -70,6 +70,7 @@ export default defineConfig({
           { text: 'Display Output', link: '/guide/display' },
           { text: 'Audio', link: '/guide/audio' },
           { text: 'DualSense Controller', link: '/guide/dualsense' },
+          { text: 'Gaming', link: '/guide/gaming' },
           { text: 'Known Issues', link: '/guide/known-issues' },
         ],
       },
