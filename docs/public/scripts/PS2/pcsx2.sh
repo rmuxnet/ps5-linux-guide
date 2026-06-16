@@ -75,4 +75,4 @@ if command -v update-desktop-database &> /dev/null; then
 fi
 
 echo "✅ PCSX2 installation and shortcuts are complete!"
-"$APPIMAGE_PATH"
+"$APPIMAGE_PATH" > /dev/null 2>&1 & disown

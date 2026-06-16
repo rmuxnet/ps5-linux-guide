@@ -39,4 +39,4 @@ else
 fi
 
 echo "Launching RPCS3..."
-"$APPIMAGE_PATH"
+"$APPIMAGE_PATH" > /dev/null 2>&1 & disown

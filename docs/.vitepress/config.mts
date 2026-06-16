@@ -23,7 +23,7 @@ export default defineConfig({
           { text: 'ps5-linux GitHub', link: 'https://github.com/ps5-linux' },
           { text: 'ps5-linux-image', link: 'https://github.com/ps5-linux/ps5-linux-image' },
           { text: 'ps5-linux-image (mia)', link: 'https://git.etawen.dev/mia/ps5-linux-image' },
-          { text: 'Contributor', link: "https://github.com/nothinglikeuuuuu"}
+          { text: 'Contributor', link: "https://github.com/nothinglikeuuuuu" }
         ],
       },
     ],
@@ -56,7 +56,7 @@ export default defineConfig({
           { text: 'Booting Linux', link: '/guide/booting' },
           {
             text: 'Kernel Setup',
-            collapsed: false,
+            collapsed: true,
             items: [
               { text: 'General Setup', link: '/guide/kernel' },
               { text: 'Arch Linux Compilation', link: '/guide/arch' }
@@ -77,9 +77,24 @@ export default defineConfig({
       {
         text: 'Emulators',
         items: [
-          { text: 'PS1 Emulator', link: 'guide/duckstation'},
-          { text: 'PS2 Emulator', link: 'guide/pcsx2'},
-          { text: 'PS3 Emulator', link: '/guide/rpcs3' },
+          {
+            text: 'PlayStation',
+            collapsed: true,
+            items: [
+              { text: 'PS1 Emulator', link: '/guide/Emulators/duckstation' },
+              { text: 'PS2 Emulator', link: '/guide/Emulators/pcsx2' },
+              { text: 'PS3 Emulator', link: '/guide/Emulators/rpcs3' },
+            ]
+          },
+          {
+            text: 'Xbox',
+            collapsed: true,
+            items:
+              [
+                { text: 'Xemu', link: '/guide/Emulators/xemu' },
+                { text: 'Xenia', link: '/guide/Emulators/xenia' },
+              ]
+          }
         ],
       },
       {

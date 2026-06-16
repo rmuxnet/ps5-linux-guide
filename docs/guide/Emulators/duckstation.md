@@ -10,8 +10,6 @@ This guide is split into two sections. First, we provide a universal script to a
 In the second section, we will walk you through configuring the emulator step-by-step so you can start booting your games.
 :::
 
----
-
 ## 1. Automated Installation
 
 Run the following command in your terminal to automatically download the latest DuckStation AppImage, configure its shortcut, and set up the desktop application menu icon:

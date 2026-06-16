@@ -2,7 +2,6 @@
 
 PCSX2 is a free and open-source PlayStation 2 (PS2) emulator. Its purpose is to emulate the PS2's hardware, using a combination of MIPS CPU Interpreters, Recompilers, and a Virtual Machine that manages hardware states and system memory.
 
-
 # What Can It Do?
 
 * **PCSX2** allows you to play PS2 games on your PC with added features like:
