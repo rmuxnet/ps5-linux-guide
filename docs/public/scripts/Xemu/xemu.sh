@@ -52,7 +52,7 @@ fi
 
 if [ ! -f "$LOCAL_ICON_DIR/xemu.png" ]; then
     echo "Setting up application icons..."
-    curl -sL -o "$LOCAL_ICON_DIR/xemu.png" "https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/docs/public/images/Xemu/xemu.png"
+    curl -sL -o "$LOCAL_ICON_DIR/xemu.png" "https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/main/docs/public/images/Xemu/xemu.png"
 fi
 
 echo "Creating desktop environment configurations..."
