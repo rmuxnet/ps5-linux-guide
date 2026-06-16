@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 BIN_DIR="$HOME/.local/bin"
