@@ -1,0 +1,20 @@
+name: Mirror to ps5-linux org
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to ps5-linux/ps5-linux-guide
+        run: |
+          git remote add upstream https://x-access-token:${{ secrets.PS5_LINUX_MIRROR_TOKEN }}@github.com/ps5-linux/ps5-linux-guide.git
+          git push upstream main --force-with-lease
