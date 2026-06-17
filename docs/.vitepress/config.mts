@@ -81,9 +81,11 @@ export default defineConfig({
             text: 'PlayStation',
             collapsed: true,
             items: [
-              { text: 'PS1 Emulator', link: '/guide/Emulators/duckstation' },
-              { text: 'PS2 Emulator', link: '/guide/Emulators/pcsx2' },
-              { text: 'PS3 Emulator', link: '/guide/Emulators/rpcs3' },
+              { text: 'PS1 Emulator', link: '/guide/Emulators/PS/duckstation' },
+              { text: 'PS2 Emulator', link: '/guide/Emulators/PS/pcsx2' },
+              { text: 'PS3 Emulator', link: '/guide/Emulators/PS/rpcs3' },
+              { text: 'PSP Emulator', link: '/guide/Emulators/PS/psp' },
+
             ]
           },
           {
@@ -91,11 +93,46 @@ export default defineConfig({
             collapsed: true,
             items:
               [
-                { text: 'Xemu', link: '/guide/Emulators/xemu' },
-                { text: 'Xenia', link: '/guide/Emulators/xenia' },
+                { text: 'Xemu', link: '/guide/Emulators/Xbox/xemu' },
+                { text: 'Xenia', link: '/guide/Emulators/Xbox/xenia' },
               ]
+          },
+          {
+            text: 'Nintendo',
+            collapsed: true,
+            items: [
+              { text: 'Switch', link: '/guide/Emulators/Nintendo/switch' },
+              { text: 'Wii U', link: '/guide/Emulators/Nintendo/wiiu' },
+              { text: 'Wii & Gamecube', link: '/guide/Emulators/Nintendo/wii' },
+            ]
+          },
+          {
+            text : 'Retro',
+            collapsed : true,
+            items: [
+              { text: 'Retroarch', link : '/guide/Emulators/Retro/retroarch'},
+            ]
+          },
+          {
+            text : 'All In One',
+            collapsed : true,
+            items : [
+              { text : 'EmuDeck', link : '/guide/Emulators/AIO/emudeck'}
+            ]
           }
         ],
+      },
+      {
+        text : 'Software',
+        items : [
+          {
+            text : 'Browsers',
+            collapsed : true,
+            items : [
+              { text : 'Chrome', link : '/guide/Software/Browsers/Chromium/chrome'}
+            ]
+          }
+        ]
       },
       {
         text: 'About',
