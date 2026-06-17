@@ -74,6 +74,6 @@ Once your game library is placed in the folder, you must instruct Dolphin where 
 This guide does not condone or support piracy in any form. To comply with copyright laws and support developers, you should exclusively use your own legally dumped game backups.
 :::
 
-If you encounter performance issues, compatibility errors, or crashes, please consult the official documentation:
+::: warning If you encounter performance issues, compatibility errors, or crashes, please consult the official documentation:
 👉 **Official Resource:** [Dolphin Wiki](https://dolphin-emu.org/docs/guides/)
 :::
