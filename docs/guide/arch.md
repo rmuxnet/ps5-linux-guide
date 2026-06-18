@@ -57,7 +57,7 @@ git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 cd linux
 ```
 
-# Replace v7.0.10 with the latest version found on the releases page
+# Run the following command 
 ```bash
 git checkout "tags/v$(grep -m1 "^# Linux/" ../ps5-linux-patches/.config | awk '{print $3}')"
 ```
