@@ -59,7 +59,7 @@ cd linux
 
 # Replace v7.0.10 with the latest version found on the releases page
 ```bash
-git checkout tags/v7.0.10
+git checkout "tags/v$(grep -m1 "^# Linux/" ../ps5-linux-patches/.config | awk '{print $3}')"
 ```
 # Apply patches and copy configuration
 
