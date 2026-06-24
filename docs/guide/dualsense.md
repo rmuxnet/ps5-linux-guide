@@ -14,6 +14,8 @@ On Bazzite, pair the controller via Bluetooth in **gamemode only** - pairing in 
 
 # Dualsense Fix For Marvell
 
+## Step 1
+
 The developer cow recently released an updated Bluetooth driver supporting Marvell and MediaTek wireless chipsets. However, users attempting to connect a PlayStation 5 DualSense controller to a Linux environment may experience connectivity issues.
 
 The following procedure outlines the steps required to successfully resolve these connection failures specifically on systems utilizing Marvell hardware.
@@ -27,3 +29,21 @@ This script automatically generates the required udev rules, modifies the TLP an
 ```bash
 curl -sSL https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/main/docs/public/scripts/BLfix/blfix.sh | bash
 ```
+
+## Step 2: Controller Pairing & Profile Configuration
+
+Put your DualSense controller into pairing mode (press and hold the PS Button and the Share/Create Button simultaneously until the lightbar flashes rapidly).
+
+Once the controller appears in the Blueman device list, select it and click Connect.
+
+Right-click the newly paired controller within the Blueman interface and ensure both the Audio Profile and Input Profile are explicitly enabled.
+
+## Step 3: Persistent Reconnection Workaround
+
+Due to current limitations within the early-stage Marvell Bluetooth driver, automatic re-connection profiles may fail on subsequent boot cycles. If the controller fails to reconnect automatically:
+
+Open Blueman.
+
+Right-click the existing DualSense entry and select Remove.
+
+Re-scan for devices, put the controller into pairing mode, and re-pair the device as outlined in Step 2.
