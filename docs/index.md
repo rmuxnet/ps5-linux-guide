@@ -7,7 +7,7 @@ hero:
   tagline: Community-maintained documentation for PS5 Linux - hardware status, installation, and hacks.
   image:
     src: /screenshot-arch.webp
-    alt: CFI-1016B (PS5 Digital) on Firmware 6.02 running Arch Linux
+    alt: CFI-1216A (PS5 Disc Edition) on Firmware 6.02 running Arch Linux
   actions:
     - theme: brand
       text: Get Started
