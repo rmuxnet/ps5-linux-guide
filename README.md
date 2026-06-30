@@ -1,13 +1,13 @@
 # What is this?
 
-Community guide for running Linux on the **PlayStation 5** (Phat model only).
+Community guide for running Linux on the **PlayStation 5** (Phat/Slim model only).
 
 Uses patched HV vulnerabilities to boot a full Linux desktop. Internal SSD is untouched - you can still use PS5 OS normally.
 
 > [!WARNING]
-> **Currently documented:** PS5 Phat, FW 3.00–6.02
+> **Currently documented:** PS5 Phat, FW 3.00–7.61
 > 
-> Whether higher firmware or other models will ever be supported—we genuinely don't know, and we don't want to jinx anything.
+> Whether higher firmware or PS5 Pro model will ever be supported—we genuinely don't know, and we don't want to jinx anything.
 
 ![PS5 running Arch Linux with kernel 7.1.0](/docs/public/screenshot-arch.webp)
 
