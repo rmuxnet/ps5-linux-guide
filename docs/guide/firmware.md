@@ -1,6 +1,6 @@
 # Supported Firmware
 
-Currently documented for **PS5 Phat/Slim**, firmware **3.00-7.61**. Whether higher firmware or other models will ever be supported - we genuinely don't know, and we don't want to jinx anything.
+Currently documented for **PS5 Phat/Slim**, firmware **3.00-7.61**. Whether higher firmware or PS5 Pro model will ever be supported - we genuinely don't know, and we don't want to jinx anything.
 
 ## Exploitable Versions
 
@@ -26,7 +26,7 @@ Community recommendations:
 |---|---|
 | No M.2, Linux only | **3.00** - stay as low as possible |
 | M.2 + PS5 games + Linux | **4.03** - community favorite, full jailbreak support, backports, up to 4TB M.2 |
-| Already on 5.xx/6.02/7.61 | Fine to stay, no downsides for Linux |
+| Already on 5.xx/6.02/7.xx/7.61 | Fine to stay, no downsides for Linux |
 
 
 ::: info 6.02/7.61 jailbreak is more tedious
