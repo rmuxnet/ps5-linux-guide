@@ -27,7 +27,7 @@ git clone https://github.com/idlesauce/umtx2
    ```
 
 ::: tip Y2JB for Linux only
-To run Y2JB without conflicting with your regular jailbreak setup, install a separate YouTube package from a different region. See [prosperopatches](https://github.com/prosperopatches) for packages.
+To run Y2JB without conflicting with your regular jailbreak setup, install a separate YouTube package from a different region. See [prosperopatches](https://prosperopatches.com/) for packages.
 :::
 
 After either exploit succeeds, the PS5 listens on port `9021` for the Linux payload. Continue to [Booting](/guide/booting#5-send-the-payload).

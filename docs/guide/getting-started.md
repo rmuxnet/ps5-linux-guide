@@ -1,7 +1,7 @@
 # Getting Started
 
 ::: info Prerequesites
-Read [Supported Firmware](/guide/firmware) first. PS5 Phat only, max firmware 6.02.
+Read [Supported Firmware](/guide/firmware) first. PS5 Phat/Sli, only, max firmware 7.61.
 :::
 
 ## What you need
