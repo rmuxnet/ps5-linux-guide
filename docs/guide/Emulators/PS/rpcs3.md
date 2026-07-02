@@ -15,7 +15,7 @@ In the second section, we will walk you through configuring the emulator step-by
 Run the following command in your terminal to automatically download the latest RPCS3 AppImage, configure its shortcut, and set up the desktop application menu icon:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/main/docs/public/scripts/rpcs3/rpcs3.sh | bash
+curl -sSL https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/main/docs/public/scripts/PS3/rpcs3.sh | bash
 ```
 
 ## 2. Configuring The Emulator
