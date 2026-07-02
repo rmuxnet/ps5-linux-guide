@@ -14,7 +14,6 @@ if [ -z "$DOWNLOAD_URL" ]; then
     exit 1
 fi
 
-# 2. Check if RPCS3 is already installed
 if [ -f "$APPIMAGE_PATH" ]; then
     echo "RPCS3 is already installed. Checking for updates..."
 
