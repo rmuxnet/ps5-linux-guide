@@ -51,7 +51,6 @@ if [ ! -f "$LOCAL_ICON_DIR/xenia.png" ]; then
     curl -sL -o "$LOCAL_ICON_DIR/xenia.png" "https://raw.githubusercontent.com/rmuxnet/ps5-linux-guide/main/docs/public/images/Xemu/xeniapng"
 fi
 
-# 3. Create Application Menu Entry (.desktop shortcut)
 echo "Creating desktop environment configurations..."
 cat <<EOF> "$DESKTOP_ENTRY_DIR/xenia-edge.desktop"
 [Desktop Entry]
