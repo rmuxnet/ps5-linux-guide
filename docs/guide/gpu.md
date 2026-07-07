@@ -19,6 +19,13 @@ sudo ./ps5_control --boost on
 
 Always enable fan alongside boost - this matches PS5 OS behavior.
 
+For heavier loads or if you're chasing higher sustained boost clocks, `--fan max`
+runs the fan stronger than plain `on`:
+
+```bash
+sudo ./ps5_control --fan max
+```
+
 To enable at boot:
 
 ```bash

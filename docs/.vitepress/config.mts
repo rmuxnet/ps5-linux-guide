@@ -46,6 +46,7 @@ export default defineConfig({
           { text: 'WiFi (IW620)', link: '/guide/wifi' },
           { text: 'USB & Storage', link: '/guide/usb-storage' },
           { text: 'M.2 Compatibility', link: '/guide/m2-compat' },
+          { text: 'LED Control', link: '/guide/led' },
         ],
       },
       {
