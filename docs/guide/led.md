@@ -28,7 +28,18 @@ List available presets:
 ls /sys/class/leds/ | grep ps5
 ```
 
-Common presets: `off`, `blue_rich`, `purple`, `pink_breathe`, `sunrise`.
+Full preset list (`ls /sys/class/leds/ | grep ps5`):
+
+```
+off, blue_breathe, blue_hint_purple, blue_rich, blue_to_richblue,
+blue_white_anim, dim_cool_white, orange_breathe, orange_dim,
+pink_breathe, pink_breathe_fast, pink_purple, pink_violet_dim,
+purple, purple_white, purplish_blue_white, salmon_pink,
+salmon_pink_breathe, soft_blue_purple_1, soft_blue_purple_2,
+soft_orange_dim, soft_purple, sunrise, warm_pink_dim,
+white_breathe, white_bright, white_dim, white_medium,
+zoneb_both_pulse, zoneb_orange_pulse, zoneb_white_pulse
+```
 
 ## Hardware notes
 

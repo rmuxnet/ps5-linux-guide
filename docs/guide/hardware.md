@@ -4,9 +4,9 @@
 
 **AMD Oberon** - custom APU.
 
-- CPU: 8 cores / 16 threads, Zen 2 @ 3.5 GHz (boost via ps5_control)
+- CPU: 8 cores / 16 threads, Zen 2 @ 3.5 GHz (boost via ps5_control), `schedutil` cpufreq governor by default
 - GPU: RDNA2, 36–40 active CUs depending on unit (harvested CUs unlockable via kernel param), PCI ID `1002:13fb`, boost to 2.23 GHz via ps5_control
-- RAM: 16 GB GDDR6 (unified memory)
+- RAM: 16 GB GDDR6 (unified memory) - ~14 GB usable by the OS, remainder reserved for firmware/VRAM
 
 ## Storage
 

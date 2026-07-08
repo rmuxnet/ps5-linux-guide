@@ -5,10 +5,12 @@ ps5-linux is a community project. Core contributors:
 | Person | Contribution |
 |---|---|
 | [theflow](https://github.com/TheOfficialFloW) | ps5-linux-loader, ps5-linux-patches, ps5-linux-tools |
-| [c0w](https://github.com/c0w-ar) | ps5-linux-loader, ethernet and BD-ROM testing |
+| [c0w](https://github.com/c0w-ar) | ps5-linux-loader, xHCI Salina driver and btusb fixes, EMC RE for fan/LED/buzzer drivers |
 | [resulknad](https://github.com/resulknad) | ps5-linux-image |
-| [rmuxnet](https://github.com/rmuxnet) | PS5 Ethernet driver (`mts`), ahci_salina BD-ROM AHCI driver |
+| [rmuxnet](https://github.com/rmuxnet) | PS5 ethernet driver (`mts`), ahci_salina BD-ROM AHCI driver, LED driver, buzzer driver, fan driver, [ps5ctl](https://github.com/rmuxnet/ps5ctl) |
 | [slidybat](https://github.com/slidybat) | Ethernet driver base |
+| [buzzer-re](https://github.com/buzzer-re) | ps5-linux-loader, ps5-linux-mwifiex, systemd services in ps5-linux-tools |
+| [jspavlick](https://github.com/jspavlick) | Fan max-boost mode in ps5-linux-tools |
 | [fail0verflow](https://github.com/fail0verflow) | [prosperous](https://github.com/fail0verflow/prosperous) |
 | [flatz](https://github.com/flatz) | HV exploit |
 | [cragson](https://github.com/cragson) | HV exploit implementation |

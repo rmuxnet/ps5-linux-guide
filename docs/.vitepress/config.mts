@@ -47,6 +47,8 @@ export default defineConfig({
           { text: 'USB & Storage', link: '/guide/usb-storage' },
           { text: 'M.2 Compatibility', link: '/guide/m2-compat' },
           { text: 'LED Control', link: '/guide/led' },
+          { text: 'Fan Control', link: '/guide/fan' },
+          { text: 'Buzzer', link: '/guide/buzzer' },
         ],
       },
       {

@@ -72,6 +72,16 @@ amdgpu.force_1080p=1
 video=DP-1:1920x1080@60
 ```
 
+Default shipped cmdline (varies slightly per image):
+
+```
+root=LABEL=__DISTRO__ rw rootwait console=ttyTitania0 console=tty0 mitigations=off idle=halt preempt=full
+```
+
+- `console=ttyTitania0` - Sony's internal name for the UART serial console, useful if you're debugging headless over UART
+- `mitigations=off` - Spectre/Meltdown mitigations disabled by default for performance; add `mitigations=auto` if you want them back
+- `idle=halt` - see [Performance Tips](/guide/gpu#performance-tips) if you notice microstuttering
+
 ## VRAM
 
-Default VRAM allocation is 512 MB (dynamic). To change, edit `vram.txt` on the FAT32 partition. See [AMD BC250 docs](https://elektricm.github.io/amd-bc250-docs/bios/flashing/#why-flash-the-bios) for details.
+Default VRAM allocation is 512 MB (dynamic). To change, edit `vram.txt` on the FAT32 partition - value is a **hex byte count**, not decimal MB, see [GPU: VRAM](/guide/gpu#vram) for the correct format and a size table. See [AMD BC250 docs](https://elektricm.github.io/amd-bc250-docs/bios/flashing/#why-flash-the-bios) for details.

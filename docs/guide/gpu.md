@@ -76,13 +76,24 @@ amdgpu for `1002:13fb` does not register the `vcn_v3_0` IP block. Mesa, VAAPI, a
 
 Default allocation shown in tools is 512MB, but this is **dynamic** - the driver escalates and allocates more as needed. With 16GB shared RAM/VRAM, the GPU can use up to ~12GB in practice.
 
-To set a fixed allocation, edit `vram.txt` on the FAT32 USB partition:
+To set a fixed allocation, edit `vram.txt` on the FAT32 USB partition. The
+loader reads this as **hex bytes**, not decimal MB - `strtoull(buf, NULL, 16)`
+in `ps5-linux-loader/source/loader.c`. A decimal MB value here silently
+mis-sets VRAM to almost nothing (a common cause of black screen on boot).
+
+Default (512MB):
 
 ```
-8192
+20000000
 ```
 
-(value in MB)
+| Size | vram.txt value |
+|---|---|
+| 512MB (default) | `20000000` |
+| 1GB | `40000000` |
+| 2GB | `80000000` |
+| 4GB | `100000000` |
+| 8GB | `200000000` |
 
 ## Equivalent Hardware
 
