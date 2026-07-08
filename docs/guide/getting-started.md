@@ -19,6 +19,10 @@ Read [Supported Firmware](/guide/firmware) first. PS5 Phat/Slim only, max firmwa
 
 <video src="https://media.tenor.com/u4iPc3J_99UAAAPo/yapping-yapping-level-today.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
 
+## PS5 Linux noobs when a game doesn't launch
+
+![Game files are verified, House. It has to be the drivers.](/images/memes/house-drivers.jpg)
+
 ## Overview
 
 1. [Configure PS5 settings](/guide/prerequisites)

@@ -9,8 +9,8 @@ Currently documented for **PS5 Phat/Slim**, firmware **3.00-7.61**. Whether high
 | 3.00, 3.10, 3.20, 3.21 | ✗ | umtx2 |
 | 4.00, 4.02, 4.03, 4.50, 4.51 | ✓ | umtx2 |
 | 5.00, 5.02, 5.10, 5.50 | ✓ | umtx2 |
-| 6.00, 6.02 | ✓ | Y2JB |
-| 7.61 | ✓ | Y2JB |
+| 6.00, 6.02, 6.50 | ✓ | Y2JB |
+| 7.20, 7.40, 7.61 | ✓ | Y2JB |
 
 ::: info Why no M.2 on 3.xx?
 The PS5 fails to boot with an M.2 attached on 3.xx firmware.

@@ -18,7 +18,7 @@ git clone https://github.com/idlesauce/umtx2
 4. On PS5: go to network settings, set primary DNS to your PC's IP, leave secondary as `0.0.0.0`.
 5. Open `Settings` → User Manual → accept the untrusted certificate prompt → exploit runs.
 
-## Firmware 6.00 - 6.02: Y2JB
+## Firmware 6.00 - 7.61: Y2JB
 
 1. Install Y2JB: [github.com/Gezine/Y2JB](https://github.com/Gezine/Y2JB)
 2. Run the kernel exploit:

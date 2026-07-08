@@ -6,12 +6,15 @@
 
 | Distro | Desktop | Notes |
 |---|---|---|
-| Ubuntu 26.04 (default) | GNOME | Reccomended for beginners |
+| Ubuntu 26.04 (default) | GNOME | Recommended for beginners |
 | Arch | Sway | Low overhead, low RAM usage (~750 MiB idle) |
-| CachyOS | Gamescope + Steam Big Picture | Gaming-focused |
-| Kali Linux | XFCE + kali-linux-everything | ~96 GB image, needs ~150 GB free to build |
-| Fedora | GNOME | |
-| Bazzite | Gamescope + Steam (Deck-like) | Community builds, not in official image builder |
+| CachyOS | Gamescope + Steam Big Picture, KDE Plasma (no SDDM) | Gaming-focused |
+| Fedora | GNOME (Wayland) | |
+| Debian 12 | XFCE | Successor to the old Kali-based image |
+| Proxmox VE 8 | headless | Runs PS5 as a hypervisor, no desktop |
+| Bazzite | Gamescope + Steam | uBlue gaming Fedora, ostree-flattened |
+| Bazzite Deck | Gamescope + Steam, Deck-like UI | Bazzite's Steam Deck interface variant |
+| Batocera | retro emulation frontend | Pre-built squashfs rootfs |
 
 You can also build a **multi-distro image** with kexec switching between Ubuntu, Arch, and CachyOS on the same USB.
 
@@ -21,7 +24,7 @@ Download from [ps5-linux-image releases](https://github.com/ps5-linux/ps5-linux-
 
 ### Build your own
 
-Requires Docker and ~30 GB free disk space (Kali needs ~150 GB).
+Requires Docker and ~30 GB free disk space.
 
 ```bash
 # Windows: run in WSL first (wsl --install)
@@ -34,16 +37,22 @@ git clone https://github.com/ps5-linux/ps5-linux-image
 cd ps5-linux-image
 chmod +x ./build_image.sh
 
-# Single distro
+# Single distro: ubuntu2604, arch, cachyos, fedora, debian, proxmox,
+# bazzite, bazzite-deck, batocera
 ./build_image.sh --distro ubuntu2604
 ./build_image.sh --distro cachyos
-./build_image.sh --distro kali
 
 # Multi-distro (Ubuntu + Arch + CachyOS, 32 GB image)
 ./build_image.sh --distro all
+
+# Build just the kernel packages (.deb / .pkg.tar.zst), no image
+./build_image.sh --kernel-only
+
+# Build against a specific ps5-linux-patches branch/tag/commit
+./build_image.sh --distro arch --patches-ref main
 ```
 
-Output is written to `output/`. Subsequent runs reuse cached kernel and rootfs automatically.
+Output is written to `output/` (kernel-only output goes to `linux-bin/`). Subsequent runs reuse cached kernel and rootfs automatically; use `--clean` to wipe and start fresh.
 
 ::: tip WSL running out of memory during build?
 Create or edit `C:\Users\<you>\.wslconfig` and raise the memory limit:
