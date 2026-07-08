@@ -74,6 +74,7 @@ export default defineConfig({
           { text: 'Audio', link: '/guide/audio' },
           { text: 'DualSense Controller', link: '/guide/dualsense' },
           { text: 'Gaming', link: '/guide/gaming' },
+          { text: 'SSH & Getting Help', link: '/guide/getting-help' },
           { text: 'Known Issues', link: '/guide/known-issues' },
         ],
       },
