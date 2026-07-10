@@ -7,11 +7,26 @@ HDMI 2.1 via amdgpu. Works out of the box once amdgpu loads.
 | Resolution | Refresh Rate | Status |
 |---|---|---|
 | 1080p | 60 Hz | Working |
+| 1080p | 120 Hz | Confirmed on ASUS VY249HGR (see note below) |
 | 1440p | 60 Hz | Working (some monitors have issues) |
 | 2160p (4K) | 60 Hz | Working (some monitors have issues) |
 | 1440p | 120 Hz | Confirmed on DELL S3225QC |
 
 30 Hz and broader 120 Hz support may be added in the future.
+
+::: tip `amdgpu.force_1080p=1` caps refresh rate
+This flag ships in the default `cmdline.txt` and was long assumed
+mandatory, but as of 2026-07-10 testing it isn't required for every
+monitor and it actively **caps output to 60Hz** even on displays that
+support more. Confirmed on an ASUS VY249HGR (native 1920x1080@120Hz,
+AMD FreeSync 48-120Hz per EDID) — capped to 60Hz with the flag present,
+full 120Hz once removed. A Lenovo T23d-10 (60Hz-class panel) also
+displayed fine with the flag removed.
+
+If your monitor won't display at all, it's still worth trying as a
+troubleshooting step (see below) — but if it does work without it, leave
+it out, especially on a high-refresh panel.
+:::
 
 ## Confirmed Working Monitors (no cmdline override needed)
 
@@ -21,6 +36,8 @@ HDMI 2.1 via amdgpu. Works out of the box once amdgpu loads.
 - LG 27GL850 (reportedly)
 - Lenovo Legion Y27q (reportedly)
 - ViewSonic Elite XG270QG (reportedly)
+- ASUS VY249HGR (1080p@120, HDMI — needs `amdgpu.force_1080p=1` *removed* for 120Hz, see tip above)
+- Lenovo T23d-10 (1080p@60, HDMI)
 
 ## Troubleshooting Black Screen
 
