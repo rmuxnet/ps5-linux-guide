@@ -23,6 +23,10 @@ Read [Supported Firmware](/guide/firmware) first. PS5 Phat/Slim only, max firmwa
 
 ![Game files are verified, House. It has to be the drivers.](/images/memes/house-drivers.jpg)
 
+## Every PS5 Linux user larping that they understand Linux
+
+![LARP](/images/memes/larp.gif)
+
 ## Overview
 
 1. [Configure PS5 settings](/guide/prerequisites)

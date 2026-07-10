@@ -15,6 +15,9 @@
 
 CachyOS is currently not booting - confirmed by multiple users including rmux. Kernel panics immediately after the orange LED stops blinking. **Use Ubuntu or Arch instead until this is resolved.**
 
+<video src="/images/memes/flight-shocked.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
+<p style="text-align:center;font-style:italic">watching your kernel panic on first boot</p>
+
 If you have an older image (7.0.2) it may still work. The gamescope-session fix below applied to an earlier issue:
 
 ```bash

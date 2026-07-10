@@ -49,6 +49,8 @@ you can debug over SSH even if the display is black - see
 
 ## Collecting logs for a bug report
 
+![We don't do that here - Black Panther](/images/memes/we-dont-do-that-here.png)
+
 Before posting in Discord, grab everything relevant in one go:
 
 ```bash

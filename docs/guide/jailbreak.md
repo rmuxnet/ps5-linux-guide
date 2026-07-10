@@ -18,6 +18,9 @@ git clone https://github.com/idlesauce/umtx2
 4. On PS5: go to network settings, set primary DNS to your PC's IP, leave secondary as `0.0.0.0`.
 5. Open `Settings` → User Manual → accept the untrusted certificate prompt → exploit runs.
 
+<video src="/images/memes/jimmy-butler-paper.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
+<p style="text-align:center;font-style:italic">reading these 5 steps for the first time</p>
+
 ## Firmware 6.00 - 7.61: Y2JB
 
 1. Install Y2JB: [github.com/Gezine/Y2JB](https://github.com/Gezine/Y2JB)
@@ -29,6 +32,12 @@ git clone https://github.com/idlesauce/umtx2
 ::: tip Y2JB for Linux only
 To run Y2JB without conflicting with your regular jailbreak setup, install a separate YouTube package from a different region. See [prosperopatches](https://prosperopatches.com/) for packages.
 :::
+
+## Every ps5-linux user, every single boot
+
+No perma-jailbreak — umtx2 and Y2JB both need a fresh run each time you want back into Linux.
+
+![Sisyphus pushing the boulder up the hill again](/images/memes/sisyphus.png)
 
 After either exploit succeeds, the PS5 listens on port `9021` for the Linux payload. Continue to [Booting](/guide/booting#5-send-the-payload).
 

@@ -8,6 +8,9 @@ Uses patched HV vulnerabilities to boot a full Linux desktop. Internal SSD is un
 Whether higher firmware or PS5 pro model will ever be supported - we genuinely don't know, and we don't want to jinx anything.
 :::
 
+<video src="/images/memes/hope-bunny.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
+<p style="text-align:center;font-style:italic">there is always hope</p>
+
 :::warning Important Notice regarding PlayStation 5 Firmware Compatibility 
 If your console is presently running a firmware version that is beetween 6.02-7.61 (ex. 6.50, 7.00, 7.60, etc), you have two options: 
 * Maintain your current version and await a dedicated software port.

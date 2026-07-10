@@ -73,6 +73,8 @@ If Linux boots but goes black/blue after the login screen on a 4K display:
 
 ## Black Screen but SSH Works
 
+![This is fine dog sitting in a burning room](/images/memes/this-is-fine.png)
+
 If you can SSH in but display is black, collect logs to diagnose - see
 [SSH & Getting Help](/guide/getting-help#collecting-logs-for-a-bug-report)
 for the full log-dump command. At minimum check:

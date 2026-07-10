@@ -2,6 +2,13 @@
 
 Currently documented for **PS5 Phat/Slim**, firmware **3.00-7.61**. Whether higher firmware or PS5 Pro model will ever be supported - we genuinely don't know, and we don't want to jinx anything.
 
+::: info Before you ask "when 8.xx / latest fw"
+Retail firmware is already past scene numbering `13.xx` (public installer shows something like `26.04-13.42.00`) - the exploit chain is frozen at `7.61`. That gap isn't closing on a schedule. No ETA exists. Asking in Discord won't summon one faster.
+:::
+
+<video src="/images/memes/clicked-post.mp4" autoplay loop muted playsinline style="max-width:100%;border-radius:8px"></video>
+<p style="text-align:center;font-style:italic">and then he asked "eta when 8.xx" in #general</p>
+
 ## Exploitable Versions
 
 | Firmware | M.2 Support | Exploit |
