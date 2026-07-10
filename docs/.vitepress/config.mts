@@ -129,13 +129,16 @@ export default defineConfig({
       {
         text : 'Software',
         items : [
+          { text: 'Desktop Stack', link: '/guide/Software/DesktopStack/desktop-stack' },
           {
             text : 'Browsers',
             collapsed : true,
             items : [
-              { text : 'Chrome', link : '/guide/Software/Browsers/Chromium/chrome'}
+              { text : 'Waterfox', link : '/guide/Software/Browsers/Waterfox/waterfox'}
             ]
-          }
+          },
+          { text: 'Gaming Launchers', link: '/guide/Software/Gaming/gaming-launchers' },
+          { text: 'Media & IPTV', link: '/guide/Software/Media/media' },
         ]
       },
       {
