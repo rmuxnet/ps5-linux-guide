@@ -75,8 +75,20 @@ Configure the following options based on your preference, then click **OK**:
 Congratulations! You have successfully installed and configured RPCS3. Your game collection will now appear in the main library grid. To begin playing, simply double-click your game of choice and enjoy!
 
 ::: info Note on First-Time Launch
-When you start a game for the very first time, there will be a brief delay while RPCS3 compiles the necessary graphics shaders. This process happens only once per game—subsequent launches will load instantly!
+When you start a game for the very first time, there will be a brief delay while RPCS3 compiles the necessary graphics shaders. This process happens only once per game, subsequent launches will load instantly!
 :::
+
+## Performance Tuning for Demanding Games
+
+The PS5's CPU (Zen 2) sits below RPCS3's officially recommended spec (Zen 3 or newer), so heavier titles (God of War: Ascension, Killzone 2/3, The Last of Us) need real tuning, not just default settings, to be playable:
+
+- **Right-click a game -> Download Config Database** first. This pulls the community-recommended per-game settings from RPCS3's own site and is a far better starting point than defaults.
+- **SPU Block Size: Mega** helps demanding titles noticeably (confirmed on Killzone 2/3, GoW: Ascension).
+- **Disable MLAA in game patches** if a heavy title is chugging, this post-processing effect tanks framerate disproportionately on this hardware, disabling it is often what actually makes GoW: Ascension/Killzone playable rather than SPU settings alone.
+- **RSX FIFO Accuracy: Atomic/Ordered & Atomic**, and **VBlank Frequency: 120Hz** helped in some reported cases, worth trying alongside the above.
+- **Multithreaded RSX is game-dependent**, big framerate gains on some titles (Motorstorm nearly doubled), but net negative on others (GTA V ran worse with it on). Toggle and compare rather than assuming it always helps.
+
+Root cause for titles that stay rough even after tuning: this hardware's GDDR6 has notably higher CPU-facing memory latency than a typical gaming PC's DDR, which hits PS3 emulation (heavily CPU/SPU-bound) harder than it hits native games. There's no software fix for this, it's a hardware characteristic of the platform.
 
 ::: warning Technical Support Disclaimer
 This guide is an independent community resource and is not affiliated with, endorsed by, or linked to the official RPCS3 development team. As such, we cannot provide technical support or software bug fixes. 

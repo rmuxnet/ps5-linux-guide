@@ -49,6 +49,7 @@ export default defineConfig({
           { text: 'LED Control', link: '/guide/led' },
           { text: 'Fan Control', link: '/guide/fan' },
           { text: 'Buzzer', link: '/guide/buzzer' },
+          { text: 'Capture Cards', link: '/guide/capture-cards' },
         ],
       },
       {

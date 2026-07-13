@@ -18,6 +18,14 @@
 
 You can also build a **multi-distro image** with kexec switching between Ubuntu, Arch, and CachyOS on the same USB.
 
+### Distro-Specific Notes
+
+**CachyOS:** `sudo pacman -S cachyos-handheld` converts a normal CachyOS install into gamescope-first + switch-to-desktop handheld mode automatically, instead of setting it up by hand.
+
+**Batocera:** if you get network but no display output on v43, it's shipping Mesa 25.3.6 **without** the PS5 display patches. You either need to wait for a Batocera build with a newer Mesa, or rebuild Mesa yourself with the PS5 patches applied, this isn't a cmdline.txt/EDID issue, it's a missing driver patch at the distro level.
+
+**tty1-autologin straight into gamescope** (skip SDDM/a display manager entirely): set up a systemd getty drop-in for autologin on tty1 only, then have `~/.bash_profile` check it's running on `/dev/tty1` before killing leftover Steam helpers and `exec`ing gamescope with `steam -gamepadui` directly. Scoping the check to tty1 only means SSH and other logins aren't affected. This avoids the common SDDM black-screen-on-switch issues some desktop-mode setups hit.
+
 ### Pre-built
 
 Download from [ps5-linux-image releases](https://github.com/ps5-linux/ps5-linux-image/releases/tag/latest). Grab the `.img.xz` for your chosen distro and unpack it.
@@ -123,6 +131,10 @@ Send it (replace `$PS5IP` with your PS5's IP shown on screen):
 ```bash
 socat -t 99999999 - TCP:$PS5IP:9021 < ps5-linux-loader.elf
 ```
+
+::: tip Waking the PS5 remotely (no physical button press)
+If you're testing repeatedly and don't want to walk over and press the power button every time, both DualSense wake and HDMI-CEC wake work to bring the PS5 out of orange/rest mode. There's a [DualSense BT wake-message spoofer](https://github.com/deftdawg/pywakepsXonbt) that lets you trigger this from another machine over Bluetooth without needing the actual controller in range.
+:::
 
 ## Reading the LED
 

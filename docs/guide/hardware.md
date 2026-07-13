@@ -25,6 +25,16 @@
 - Ethernet: MediaTek Star GbE / Salina GBE (`104d:9104`), driver `mts` - works out of the box, see [Ethernet](/guide/ethernet)
 - WiFi: Marvell IW620 (`1b4b:2b56`), driver `moal` - see [WiFi](/guide/wifi)
 
+::: warning Salina chip revision
+Boards use one of two Salina revisions for the wireless combo chip - not tied to a specific console model, varies unit to unit. Check yours with:
+
+```bash
+dmesg | grep spcie0
+```
+
+`0x11xxxxx` = Salina rev1 (Marvell) - currently supported. `0x12xxxxx` = Salina rev2 (MediaTek on most units, though some rev2 boards are still Marvell) - unsupported for WiFi/BT driver work in progress.
+:::
+
 ## Audio
 
 - HDMI audio: AMD/ATI `1002:13ea` - working

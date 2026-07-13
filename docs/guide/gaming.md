@@ -56,6 +56,16 @@ WoW requires Battlenet. Install via Proton:
 3. Install to `/home/<user>/Games` (shows as `Z:/home/<user>/Games` in the installer)
 4. Launch `Battle.net.exe` from that folder to play
 
+**Performance tuning:** single-core CPU performance is the bottleneck in raids (see [Gaming Benchmarks](#gaming-benchmarks) for why), not GPU. In Lutris, edit the WoW shortcut, Configure -> Environment Variables, add:
+
+```
+PROTON_FORCE_FSYNC=1
+VKD3D_CONFIG=no_upload_h_cb
+RADV_PERF_PROFILE=pro
+```
+
+Reported to noticeably help frame times in busy scenes (25-man raids), though single-core-bound content will still dip regardless. Use the cachyos-proton build from Steam for this.
+
 ## Known Issues
 
 ### CS2 - Mouse keeps snapping to center
@@ -85,6 +95,14 @@ The snap install of Steam has known issues. Use the `.deb` from the Steam websit
 | Tiny Tina's Wonderlands | 4K Low | 28 avg |
 | Tiny Tina's Wonderlands | 4K High | OOM crash |
 | Team Fortress 2 | 4K Max (no MSAA) | 60-300 |
+
+## Game Streaming & VR
+
+No VCN hardware encoder (see [GPU](/guide/gpu#vcn-hardware-video-decode)), and Vulkan video encode is not supported on this GPU (GFX1013) either, so any streaming solution is limited to **software (x264) encoding only**.
+
+- **Steam Link:** works, x264 software encode. Reported ~33% CPU usage per core while streaming.
+- **Sunshine:** does not work currently, fails with `[h264_vulkan] Encoding of h264 is not supported by this device` since it expects a hardware or Vulkan encoder.
+- **VR (Quest/standalone headsets):** WiVRN has had better results than Steam Link or ALVR for PCVR streaming - reported working with Quest 3, audio can be choppy at low bitrate, raise bitrate if pixelation/choppiness shows up.
 
 ## Local LLMs
 

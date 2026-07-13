@@ -10,11 +10,50 @@
 
 All ports usable for peripherals once booted.
 
+## Recommended USB Hubs / Docks
+
+Confirmed working with full port functionality:
+
+- **Startech 10G2A1C25EPD-USB-HUB** - USB-C, 2x USB-A, 2.5GbE fully utilized by Linux
+- **Dell WD19TBS Dock** (latest firmware) - USB-C, all USB-A ports, 1GbE fully utilized (also works via a USB 3.1 Type-A-to-C OTG adapter, not just direct Type-C)
+- **Orico PW11-6PR** (6-in-1 dock) - Gigabit ethernet and 3x USB-A confirmed working, HDMI port untested
+
+## USB Ethernet/WiFi Adapters
+
+Any adapter with a Linux driver works, since this is a regular Linux environment, but the following are confirmed by users:
+
+- **FENVI 1800Mbps WiFi 6 USB adapter** (MT7921 chip) - works out of the box, no config needed
+- **TP-Link Archer TX10UB Nano** (AX900, WiFi 6 + BT 5.3) - WiFi confirmed working smoothly
+
+See [Ethernet](/guide/ethernet) for the RTL8156B chipset recommendation on wired USB adapters specifically.
+
+::: warning eGPU is not possible
+An M.2-to-PCIe riser for an eGPU has been asked about and confirmed **not supported**, don't expect this to work.
+:::
+
 ## USB Drive (Required)
 
 Minimum 64 GB reccomended. If you only have a small USB drive, see [M.2 from Small USB](#m2-from-small-usb-no-64-gb-drive-available) below.
 
 If an M.2 enclosure is not being detected, try a different cable (USB 3.x) and a different port before assuming the drive is faulty.
+
+::: warning Reported: rear USB ports stop detecting M.2 enclosures on newer kernels
+Multiple users report an M.2 enclosure that worked fine on the rear Type-A ports on an older kernel only gets detected on the front Type-C port after updating. Not yet confirmed as a kernel regression vs. hardware/cable variance, if you hit "no signal"/no-detect on rear ports, try the front Type-C port first before troubleshooting further.
+:::
+
+::: warning Enclosure won't power back on after sleeping
+If your external SSD enclosure goes into its own sleep mode after the payload launches, it may not power back on, this can look like a bad SSD image, bad HDMI, or a dead TV when the actual cause is the enclosure. Disable automatic screen/display sleep so the enclosure stays active: `Settings` -> `Power` -> `Automatic Screen Blank` -> `Off` (Ubuntu).
+:::
+
+::: tip Drive shows way less free space than its actual capacity
+The rootfs partition is sparse, it starts small and is meant to grow into the drive. If `df` shows only a few GB free on a much bigger drive, grow the filesystem to fill it:
+
+```bash
+sudo resizefs2 /dev/sda1
+```
+
+Confirmed working, adjust the device/partition to match your actual drive.
+:::
 
 ## M.2 Compatibilty
 
@@ -76,6 +115,10 @@ sudo reboot
 ```
 
 If PS5 asks you to format the M.2 again after reboot, report it in Discord with your M.2 model and size.
+
+::: tip Switching distros doesn't require reformatting from PS5 OS
+Formatting the M.2 from PS5 settings only performs a "soft" format, it overwrites the LBAs PS5 itself needs and leaves your Linux partition alone. To switch distros you can just reformat directly from Linux instead (`sudo mkfs.ext4 /dev/nvme1` or your target filesystem) and reinstall, no need to go through PS5 OS first.
+:::
 
 **Install Linux image onto M.2:**
 
